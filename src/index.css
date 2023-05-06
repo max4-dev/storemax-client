@@ -1,0 +1,11 @@
+#root {
+  height: 100%;
+  color: #000;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 400;
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

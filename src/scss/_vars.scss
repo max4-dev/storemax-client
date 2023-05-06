@@ -1,0 +1,91 @@
+/* white theme */
+html[data-theme='white'] {
+  --text-color: #000;
+  --accent-color: #005BFF;
+  --bg-color: #ffffff;
+  --bg-accent: #F5F7FA;
+  --border-color: #F4F4F4;
+  --footer-color: #212224;
+  --disabled-color: #969696;
+
+  %img-color {
+    filter: none;
+  }
+
+  %category-1 {
+    background-color: #ECEEF0;
+  }
+  
+  %category-2 {
+    background-color: #F6F7F9;
+  }
+  
+  %category-3 {
+    background-color: #E9E6FD;
+  }
+}
+
+/* dark theme */
+html[data-theme='dark'] {
+  --text-color: #fff;
+  --accent-color: #0074E0;
+  --bg-color: #15171E;
+  --bg-accent: #23252B;
+  --border-color: #23252B;
+  --footer-color: #23252B;
+  --disabled-color: #969696;
+
+  %img-color {
+    filter: brightness(0) invert(1);
+  }
+
+  %category-1 {
+    background-color: #484a50;
+  }
+  
+  %category-2 {
+    background-color: #23252B;
+  }
+
+  %category-3 {
+    background-color: #161a21;
+  }
+}
+
+%btn{
+  padding: 5px 25px;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 26px;
+  background-color: transparent;
+  border-radius: 10px;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  cursor: pointer;
+}
+
+%btn-accent{
+  padding: 5px 25px;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 26px;
+  color: #fff;
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  border: 2px solid var(--accent-color);
+  cursor: pointer;
+}
+
+%btn-back{
+  position: relative;
+  padding-left: 35px;
+  &::before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('../../public/images/icons/arrow-left.svg');
+    left: 7px;
+    top: 8px;
+  }
+}

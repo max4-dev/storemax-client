@@ -126,6 +126,15 @@
       order: -1;
     }
   }
+  .create{
+    &__button + .create__button {
+      margin-left: 0;
+      margin-top: 15px;
+    }
+    &__button{
+      display: block;
+    }
+  }
 }
 
 @media (max-width: 500px) {

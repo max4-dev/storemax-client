@@ -17,8 +17,6 @@ const ratingList = [
   {name: 5},
 ];
 
-// type Good =
-
 const CreateGood: FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();

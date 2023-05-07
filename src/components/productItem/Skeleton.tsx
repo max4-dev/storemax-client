@@ -1,6 +1,5 @@
-import {FC, useEffect, useState} from 'react';
+import {FC} from 'react';
 import ContentLoader from 'react-content-loader';
-import { useTheme } from '../../hooks/use-theme';
 
 const Skeleton: FC = () => (
   <ContentLoader

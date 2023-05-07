@@ -2,14 +2,6 @@ import {FC, useEffect, useState} from 'react';
 import ContentLoader from 'react-content-loader';
 import { useTheme } from '../../hooks/use-theme';
 
-const {theme, setTheme} = useTheme();
-console.log(theme);
-
-
-useEffect(() => {
-
-}, [window.localStorage.getItem('app-theme')])
-
 const Skeleton: FC = () => (
   <ContentLoader
     speed={2}

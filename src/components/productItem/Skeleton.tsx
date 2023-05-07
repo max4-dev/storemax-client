@@ -1,15 +1,23 @@
-import {FC} from 'react';
+import {FC, useEffect, useState} from 'react';
 import ContentLoader from 'react-content-loader';
+import { useTheme } from '../../hooks/use-theme';
 
-const Skeleton: FC = (props) => (
+const {theme, setTheme} = useTheme();
+console.log(theme);
+
+
+useEffect(() => {
+
+}, [window.localStorage.getItem('app-theme')])
+
+const Skeleton: FC = () => (
   <ContentLoader
     speed={2}
     width={250}
     height={390}
     viewBox="0 0 250 390"
     backgroundColor={window.localStorage.getItem('app-theme') === 'dark' ? '#23252B' : "#f3f3f3"}
-    foregroundColor={window.localStorage.getItem('app-theme') === 'dark' ? '#484a50' : "#ecebeb"}
-    {...props}>
+    foregroundColor={window.localStorage.getItem('app-theme') === 'dark' ? '#484a50' : "#ecebeb"}>
     <rect x="0" y="-1" rx="10" ry="10" width="250" height="250" />
     <rect x="0" y="279" rx="10" ry="10" width="250" height="25" />
     <rect x="0" y="322" rx="10" ry="10" width="110" height="22" />

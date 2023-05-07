@@ -101,7 +101,7 @@ const CreateGood: FC = () => {
         formData.append('image', file);
       }
       const {data} = await axios.post('/upload', formData);
-      setImageUrl(process.env.REACT_APP_API_URL + data.url);
+      setImageUrl(data.url);
     } catch (err) {
       console.log(err);
       alert('Ошибка при загрузке файла');

@@ -489,6 +489,9 @@
   }
   &__password-btn{
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     right: 22px;
     bottom: 0;
     height: 38px;

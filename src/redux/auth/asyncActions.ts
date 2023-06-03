@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "../../axios";
+import axios from "../../core/axios";
 import { LoginParams } from "./types";
 
 export const fetchUserData = createAsyncThunk('auth/fetchUserData', async (params: LoginParams) => {

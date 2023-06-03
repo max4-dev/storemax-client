@@ -80,10 +80,15 @@
     margin-left: 16px;
   }
   &__btn{
+    transition: all .3s;
     display: inline-block;
     border: none;
     cursor: pointer;
   }
+    &__btn:disabled {
+      cursor: default;
+      background-color: var(--disabled-color);
+    }
   .signin{
     @extend %btn;
   }
@@ -959,6 +964,14 @@
 
 .notfound{
   color: var(--text-color);
+}
+
+.skeleton{
+  transition: all .5s;
+  &--dark{
+    background-color: #23252B;
+  }
+  background-color: #f3f3f3;
 }
 
 .footer{

@@ -1,4 +1,4 @@
-import {FC, MouseEvent, useRef, useState} from 'react';
+import {FC, MouseEvent, useEffect, useState} from 'react';
 import { InputTypes } from './Login';
 import { useForm } from 'react-hook-form';
 import { useAppDispatch } from '../redux/store';
@@ -6,6 +6,8 @@ import { fetchRegister } from '../redux/auth/asyncActions';
 import { useNavigate } from 'react-router-dom';
 import { RegisterParams } from '../redux/auth/types';
 import ErrorPopup from '../components/ErrorPopup';
+import { useSelector } from 'react-redux';
+import { selectIsAuth } from '../redux/auth/slice';
 
 const Register: FC = () => {
   const dispatch = useAppDispatch();
@@ -22,6 +24,14 @@ const Register: FC = () => {
     }, 
     mode: 'onChange'
   });
+
+  const isAuth = useSelector(selectIsAuth);
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate('/')
+    }
+  }, [isAuth]);
 
   const handleShow = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();

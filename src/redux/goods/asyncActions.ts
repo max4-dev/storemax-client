@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "../../axios";
+import axios from "../../core/axios";
 import { FetchGoodsProps, GoodItem } from "./types";
 
 export const fetchGoods = createAsyncThunk<GoodItem[], FetchGoodsProps>('goods/fetchByIdStatus', async (props) => {

@@ -6,7 +6,7 @@ import { selectTotalCount } from '../redux/cart/selectors';
 import { clearProducts } from '../redux/cart/slice';
 import { RootState, useAppDispatch } from '../redux/store';
 import { selectIsAuth } from '../redux/auth/slice';
-import axios from '../axios';
+import axios from '../core/axios';
 import ErrorPopup from '../components/ErrorPopup';
 import { GoodItem } from '../redux/goods/types';
 

@@ -1,4 +1,4 @@
-import axios from '../axios';
+import axios from '../core/axios';
 import { FC, useState } from 'react';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';

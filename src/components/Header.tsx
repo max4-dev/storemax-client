@@ -11,8 +11,9 @@ import { selectTotalCount } from '../redux/cart/selectors';
 import { useTheme } from '../hooks/use-theme';
 import { logOut, selectIsAuth } from '../redux/auth/slice';
 import { RootState, useAppDispatch } from '../redux/store';
+import { Status } from '../redux/goods/types';
 
-enum Theme {
+export enum Theme {
   WHITE = 'white',
   DARK = 'dark'
 }
@@ -30,7 +31,8 @@ const Header: FC = () => {
   const filterRef = useRef<HTMLDivElement>(null);
   const isAuth = useSelector(selectIsAuth);
   const {data} = useSelector((state: RootState) => state.auth);
-  
+
+  const { status } = useSelector((state: RootState) => state.goods);
 
   const handleLogOut = () => {
     dispatch(logOut());

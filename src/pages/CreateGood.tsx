@@ -5,7 +5,7 @@ import { selectIsAuth } from '../redux/auth/slice';
 import { fetchAuthMe } from '../redux/auth/asyncActions';
 import { useAppDispatch } from '../redux/store';
 import { ClickOutside } from '../components/Filter';
-import axios from '../axios';
+import axios from '../core/axios';
 import { typeList } from '../components/Aside';
 import ErrorPopup from '../components/ErrorPopup';
 

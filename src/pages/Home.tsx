@@ -12,10 +12,13 @@ import { Status } from '../redux/goods/types';
 
 import { sortList } from '../components/Filter';
 import {Filter, ProductItem, Skeleton, Pagination} from '../components/';
+import { useTheme } from '../hooks/use-theme';
 
 const Home: FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+
+  const {theme, setTheme} = useTheme();
 
   const { items, status } = useSelector((state: RootState) => state.goods);
   const {type, sort, search, title, activePage} = useSelector((state: RootState) => state.filter);
@@ -116,7 +119,7 @@ const Home: FC = () => {
         <h2 className="title product__title">
           {title}
           <sup>
-            {items.length} {subtitleName(items.length)}
+            {status !== Status.LOADING && `${items.length} ${subtitleName(items.length)}`}
           </sup>
         </h2>
         <div className="product__inner">

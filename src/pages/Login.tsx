@@ -1,10 +1,12 @@
-import { useRef, FC, MouseEvent, useState } from "react";
+import { useRef, FC, MouseEvent, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { fetchUserData } from "../redux/auth/asyncActions";
 import { LoginParams } from "../redux/auth/types";
 import { useAppDispatch } from "../redux/store";
 import { useNavigate } from "react-router-dom";
 import ErrorPopup from "../components/ErrorPopup";
+import { useSelector } from "react-redux";
+import { selectIsAuth } from "../redux/auth/slice";
 
 export enum InputTypes {
   PASSWORD = 'password',
@@ -18,6 +20,14 @@ const Login: FC = () => {
   const [check, setCheck] = useState(true);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+
+  const isAuth = useSelector(selectIsAuth);
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate('/')
+    }
+  }, [isAuth]);
 
   const {register, handleSubmit, setError, formState: {errors, isValid}} = useForm({
     defaultValues: {
